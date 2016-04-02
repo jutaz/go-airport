@@ -146,7 +146,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("waCV", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeByteString,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Configuration mode",
 		Tag:         "waCV",
 	})
@@ -158,7 +158,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("waIn", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeByteString,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Ethernet/Modem switch 1",
 		Tag:         "waIn",
 	})
@@ -169,7 +169,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raRo", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Microwave robustness flag",
 		Tag:         "raRo",
 	})
@@ -182,7 +182,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raCl", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Closed network flag",
 		Tag:         "raCl",
 	})
@@ -202,14 +202,14 @@ func (i *Info) initializeHashtable() {
 	i.Put("raDe", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeByteString,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Access point density",
 		Tag:         "raDe",
 	})
 	i.Put("raMu", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeByteString,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Multicast rate",
 		Tag:         "raMu",
 	})
@@ -220,7 +220,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raCh", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeUnsignedInteger,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Wireless channel",
 		Tag:         "raCh",
 	})
@@ -229,7 +229,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("moID", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeUnsignedInteger,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Modem timeout",
 		Tag:         "moID",
 	})
@@ -240,7 +240,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("moPD", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Dialing type (tone or pulse)",
 		Tag:         "moPD",
 	})
@@ -251,7 +251,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("moAD", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Automatic dial",
 		Tag:         "moAD",
 	})
@@ -268,7 +268,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("moCC", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeUnsignedInteger,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Phone country code",
 		Tag:         "moCC",
 	})
@@ -277,7 +277,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("moCI", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeUnsignedInteger,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Modem country code combo box index",
 		Tag:         "moCI",
 	})
@@ -316,7 +316,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("peID", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeUnsignedInteger,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "PPPoE idle timeout",
 		Tag:         "peID",
 	})
@@ -327,7 +327,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("peAC", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "PPPoE auto connect",
 		Tag:         "peAC",
 	})
@@ -338,7 +338,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("peSC", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "PPPoE stay connected",
 		Tag:         "peSC",
 	})
@@ -350,7 +350,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raWM", &InfoRecord{
 		MaxLength:   4,
 		DataType:    TypeByteString,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Encryption switch",
 		Tag:         "raWM",
 	})
@@ -389,7 +389,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raWB", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Wireless to Ethernet bridging switch",
 		Tag:         "raWB",
 	})
@@ -400,7 +400,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("acEn", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Access control switch",
 		Tag:         "acEn",
 	})
@@ -431,7 +431,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("laDS", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "LAN Ethernet DHCP switch",
 		Tag:         "laDS",
 	})
@@ -453,7 +453,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("raNA", &InfoRecord{
 		MaxLength:   1,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "NAT switch",
 		Tag:         "raNA",
 	})
@@ -630,7 +630,7 @@ func (i *Info) initializeHashtable() {
 	i.Put("acRB", &InfoRecord{
 		MaxLength:   0,
 		DataType:    TypeByte,
-		Encryption:  EncryptionUnencryped,
+		Encryption:  EncryptionUnencrypted,
 		Description: "Reboot flag",
 		Tag:         "acRB",
 	})

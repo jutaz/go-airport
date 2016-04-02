@@ -23,8 +23,8 @@ const (
 	TypeByte int32 = 5
 	// TypeLittleEndianUnsignedInteger TODO
 	TypeLittleEndianUnsignedInteger int32 = 6
-	// EncryptionUnencryped TODO
-	EncryptionUnencryped int32 = 0
+	// EncryptionUnencrypted TODO
+	EncryptionUnencrypted int32 = 0
 	// EncryptionEncryped TODO
 	EncryptionEncryped int32 = 2
 )
@@ -138,7 +138,6 @@ func (i *InfoRecord) GetUpdateBytes() []byte {
 // GetRequestBytes TODO
 func (i *InfoRecord) GetRequestBytes() []byte {
 	buf := new(bytes.Buffer)
-
 	binary.Write(buf, binary.BigEndian, []byte(i.Tag))
 	binary.Write(buf, binary.BigEndian, i.Encryption)
 	binary.Write(buf, binary.BigEndian, int32(0))
@@ -184,9 +183,9 @@ func (i *InfoRecord) SetBytesFromString(value string) {
 		bytes = i.reverseBytes(bytes)
 		break
 	case TypeCharString:
+		fallthrough
 	case TypePhoneNumber:
 		if int32(len(value)) > i.MaxLength-1 {
-			// System.out.println("Value format exception at " + OIDNum + " " + OIDRow + " " + OIDCol);
 			panic("Maximum " + string((i.MaxLength - 1)) + " characters.")
 		}
 		// Convert string to bytes.
@@ -196,7 +195,9 @@ func (i *InfoRecord) SetBytesFromString(value string) {
 		bytes = i.convertFromIPv4Address(value)
 		break
 	case TypeByte:
+		fallthrough
 	case TypeByteString:
+		fallthrough
 	default:
 		bytes = i.convertFromHexString(value)
 		break
