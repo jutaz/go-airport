@@ -21,7 +21,8 @@ func (a *Airport) Reboot() error {
 
 // GetStationName TODO
 func (a *Airport) GetStationName() (string, error)  {
-	requestBytes := NewInfo(nil).GetRequestBytes()
+	tag := "syNm"
+	requestBytes := NewInfo(nil).Get(tag).GetRequestBytes()
 
 	info, err := a.read(requestBytes)
 
@@ -29,7 +30,7 @@ func (a *Airport) GetStationName() (string, error)  {
 		return "", err
 	}
 
-	return string(info.Get("syNm").GetValue()), nil
+	return string(info.Get(tag).GetValue()), nil
 }
 
 func (a *Airport) read(requestPayload []byte) (*Info, error) {
