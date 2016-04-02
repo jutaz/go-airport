@@ -33,6 +33,24 @@ func (a *Airport) GetStationName() (string, error)  {
 	return string(info.Get(tag).GetValue()), nil
 }
 
+// GetProperty TODO
+func (a *Airport) GetProperty(tag string) (*InfoRecord, error)  {
+	infoRecord := NewInfo(nil).Get(tag)
+
+	if nil == infoRecord {
+		// Unknown item, lets construct it ourselves. Properties do not matter, airport will return actual ones.
+		infoRecord = NewInfoRecord(tag, "", TypeByteString, EncryptionUnencrypted, 0, make([]byte, 0))
+	}
+
+	info, err := a.read(infoRecord.GetRequestBytes())
+
+	if nil != err {
+		return nil, err
+	}
+
+	return info.Get(tag), nil
+}
+
 func (a *Airport) read(requestPayload []byte) (*Info, error) {
 	requestMessage := NewMessage(MessageTypeRead, a.Password, requestPayload, len(requestPayload))
 	conn, err := a.createConnection()
