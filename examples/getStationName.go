@@ -2,16 +2,21 @@ package main
 
 import (
 	"../src"
+	"flag"
 	"fmt"
 	"net"
+	"strings"
 )
 
 func main() {
-	airport := &airport.Airport{
-		Password: "", // Your password here.
-		Address:  net.IPv4(10, 0, 1, 1), // Base station IP.
+	address := flag.String("address", "10.0.0.1", "Airport address.")
+	password := flag.String("password", "superSecret", "Airport station password.")
+	flag.Parse()
+	station := &airport.Airport{
+		Password: strings.TrimSpace(*password),             // Your password here.
+		Address:  net.ParseIP(strings.TrimSpace(*address)), // Base station IP.
 	}
-	name, err := airport.GetStationName()
+	name, err := station.GetStationName()
 	if nil != err {
 		panic(err)
 	}
