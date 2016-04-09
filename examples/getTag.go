@@ -24,25 +24,10 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Got back prop: %s\n", record.Tag)
-
-	if airport.EncryptionEncrypted == record.Encryption {
-		fmt.Println("Encrypted")
-	} else {
-		fmt.Println("Unencrypted")
-	}
-
-	switch record.DataType {
-	case airport.TypeIPAddress:
-		fmt.Printf("Ip address. Value: %s\n", net.ParseIP(string(record.GetValue())))
-	case airport.TypeCharString:
-		fmt.Printf("Value: %s\n", string(record.GetValue()))
-	case airport.TypeByteString:
-		fallthrough
-	case airport.TypeByte:
-		fallthrough
-	default:
-		// Print as byte string.
-		fmt.Printf("Value: %v\n", record.GetValue())
-	}
+	fmt.Println("Tag:", record.Tag)
+	fmt.Println("Encryption:", record.Encryption)
+	fmt.Println("Max Length:", record.MaxLength)
+	fmt.Println("Type:", record.DataType)
+	fmt.Println("Value:", record)
+	fmt.Println("Raw value:", record.GetValue())
 }
