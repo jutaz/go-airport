@@ -8,25 +8,36 @@ import (
 	"strconv"
 )
 
+// RecordType TODO
+//go:generate stringer -type=RecordType
+type RecordType int32
+
+// RecordType TODO
+//go:generate stringer -type=RecordEncryption
+type RecordEncryption int32
+
 const (
 	// TypeCharString TODO
-	TypeCharString int32 = 0
+	TypeCharString RecordType = 0
 	// TypeIPAddress TODO
-	TypeIPAddress int32 = 1
+	TypeIPAddress RecordType = 1
 	// TypeByteString TODO
-	TypeByteString int32 = 2
+	TypeByteString RecordType = 2
 	// TypePhoneNumber TODO
-	TypePhoneNumber int32 = 3
+	TypePhoneNumber RecordType = 3
 	// TypeUnsignedInteger TODO
-	TypeUnsignedInteger int32 = 4
+	TypeUnsignedInteger RecordType = 4
 	// TypeByte TODO
-	TypeByte int32 = 5
+	TypeByte RecordType = 5
 	// TypeLittleEndianUnsignedInteger TODO
-	TypeLittleEndianUnsignedInteger int32 = 6
+	TypeLittleEndianUnsignedInteger RecordType = 6
+)
+
+const (
 	// EncryptionUnencrypted TODO
-	EncryptionUnencrypted int32 = 0
+	EncryptionUnencrypted RecordEncryption = 0
 	// EncryptionEncrypted TODO
-	EncryptionEncrypted int32 = 2
+	EncryptionEncrypted RecordEncryption = 2
 )
 
 // CipherBytes TODO
@@ -53,14 +64,14 @@ var CipherBytes = []byte{
 type InfoRecord struct {
 	Tag         string
 	Description string
-	DataType    int32
-	Encryption  int32
+	DataType    RecordType
+	Encryption  RecordEncryption
 	MaxLength   int32
 	Value       []byte
 }
 
 // NewInfoRecord TODO
-func NewInfoRecord(tag string, description string, dataType int32, encryption int32, maxLength int32, value []byte) *InfoRecord {
+func NewInfoRecord(tag string, description string, dataType RecordType, encryption RecordEncryption, maxLength int32, value []byte) *InfoRecord {
 	airportInfoRecord := &InfoRecord{
 		Tag:         tag,
 		Description: description,

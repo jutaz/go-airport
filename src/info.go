@@ -44,7 +44,7 @@ func NewInfo(retrievedBytes []byte) *Info {
 			//read the encryption
 			encryptionBytes := make([]byte, 4)
 			byteReader.Read(encryptionBytes)
-			element.Encryption = info.GetIntegerValue(encryptionBytes)
+			element.Encryption = RecordEncryption(info.GetIntegerValue(encryptionBytes))
 
 			//read the length
 			lengthBytes := make([]byte, 4)
@@ -74,7 +74,7 @@ func NewInfo(retrievedBytes []byte) *Info {
 			//read the encryption
 			encryptionBytes := make([]byte, 4)
 			byteReader.Read(encryptionBytes)
-			element.Encryption = info.GetIntegerValue(encryptionBytes)
+			element.Encryption = RecordEncryption(info.GetIntegerValue(encryptionBytes))
 			//read the length
 			lengthBytes := make([]byte, 4)
 			byteReader.Read(lengthBytes)
