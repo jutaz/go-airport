@@ -25,8 +25,8 @@ const (
 	TypeLittleEndianUnsignedInteger int32 = 6
 	// EncryptionUnencrypted TODO
 	EncryptionUnencrypted int32 = 0
-	// EncryptionEncryped TODO
-	EncryptionEncryped int32 = 2
+	// EncryptionEncrypted TODO
+	EncryptionEncrypted int32 = 2
 )
 
 // CipherBytes TODO
@@ -125,7 +125,7 @@ func (i *InfoRecord) GetUpdateBytes() []byte {
 
 	if len(i.Value) > 0 {
 		// encrypt bytes if needed
-		if i.Encryption == EncryptionEncryped {
+		if i.Encryption == EncryptionEncrypted {
 			binary.Write(buf, binary.BigEndian, i.encryptBytes(CipherBytes, i.Value))
 		} else {
 			binary.Write(buf, binary.BigEndian, i.Value)

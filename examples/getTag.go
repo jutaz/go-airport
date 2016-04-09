@@ -18,7 +18,7 @@ func main() {
 		Password: strings.TrimSpace(*password),             // Your password here.
 		Address:  net.ParseIP(strings.TrimSpace(*address)), // Base station IP.
 	}
-	fmt.Println(*tag)
+
 	record, err := station.GetProperty(*tag)
 	if nil != err {
 		panic(err)
@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Printf("Got back prop: %s\n", record.Tag)
 
-	if airport.EncryptionEncryped == record.Encryption {
+	if airport.EncryptionEncrypted == record.Encryption {
 		fmt.Println("Encrypted")
 	} else {
 		fmt.Println("Unencrypted")

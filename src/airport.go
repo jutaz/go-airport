@@ -1,9 +1,9 @@
 package airport
 
 import (
-	"net"
 	"bytes"
 	"io"
+	"net"
 )
 
 // Airport TODO
@@ -20,21 +20,18 @@ func (a *Airport) Reboot() error {
 }
 
 // GetStationName TODO
-func (a *Airport) GetStationName() (string, error)  {
-	tag := "syNm"
-	requestBytes := NewInfo(nil).Get(tag).GetRequestBytes()
-
-	info, err := a.read(requestBytes)
+func (a *Airport) GetStationName() (string, error) {
+	tag, err := a.GetProperty("syNm")
 
 	if nil != err {
 		return "", err
 	}
 
-	return string(info.Get(tag).GetValue()), nil
+	return string(tag.GetValue()), nil
 }
 
 // GetProperty TODO
-func (a *Airport) GetProperty(tag string) (*InfoRecord, error)  {
+func (a *Airport) GetProperty(tag string) (*InfoRecord, error) {
 	infoRecord := NewInfo(nil).Get(tag)
 
 	if nil == infoRecord {
@@ -78,7 +75,7 @@ func (a *Airport) read(requestPayload []byte) (*Info, error) {
 	}
 
 	responseBuffer := new(bytes.Buffer)
-  io.Copy(responseBuffer, conn)
+	io.Copy(responseBuffer, conn)
 
 	return NewInfo(responseBuffer.Bytes()), nil
 }
