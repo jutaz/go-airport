@@ -358,6 +358,13 @@ var tags = map[string]InfoRecord{
 		Description: "Reboot flag",
 		Tag:         "acRB",
 	},
+	"buil": InfoRecord{
+		MaxLength:   40,
+		DataType:    TypeCharString,
+		Encryption:  EncryptionUnencrypted,
+		Description: "Software build hash",
+		Tag:         "buil",
+	},
 }
 
 // GetInfoRecord TODO
